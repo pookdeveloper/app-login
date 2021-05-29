@@ -1,0 +1,33 @@
+/* Using plain CSS */
+@media (min-width: 768px) {
+  .login-form {
+    min-width: 400px;
+  }
+}
+
+
+.default-user-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../../../assets/images/login/default_background.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

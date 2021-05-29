@@ -1,0 +1,55 @@
+<div class="bg center">
+
+  <nz-card class="login-form m-10">
+
+    <div nz-row nzJustify="center">
+      <img class="default-user-image"
+           nz-image
+           nzSrc="assets/images/login/default_user_image.jpg"/>
+    </div>
+
+    <div nz-row nzJustify="center" class="m-t-10">
+      <p>{{'login.title' |transloco}}</p>
+    </div>
+
+    <form nz-form [formGroup]="form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="emailErrorTpl">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="email" placeholder="{{'login.email' | transloco}}"/>
+          </nz-input-group>
+        </nz-form-control>
+        <ng-template #emailErrorTpl let-control>
+          <ng-container *ngIf="control.errors?.required">
+            {{'login.emailError' | transloco}}
+          </ng-container>
+          <ng-container *ngIf="control.errors?.pattern">
+            {{'login.emailValidError' | transloco}}
+          </ng-container>
+        </ng-template>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="{{'login.passwordError' | transloco}}">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password"
+                   placeholder="{{'login.password' | transloco}}"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <div nz-row nzJustify="space-between">
+        <div nz-col>{{'login.reminder' | transloco}}</div>
+        <div nz-col>
+          <nz-switch formControlName="reminder"></nz-switch>
+        </div>
+      </div>
+
+      <div nz-row nzJustify="center" class="m-t-10">
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+      </div>
+    </form>
+
+  </nz-card>
+
+</div>

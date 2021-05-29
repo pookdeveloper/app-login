@@ -1,0 +1,12 @@
+{
+  "login": {
+    "title": "Prueba técnica",
+    "email": "Email",
+    "password": "Contraseña",
+    "reminder": "Recordar",
+    "emailError": "¡Ingrese su correo electrónico!",
+    "emailValidError": "¡Ingrese un correo valido!",
+    "passwordError": "¡Ingrese su contraseña!",
+    "logged": "Inicio de sesión correcto"
+  }
+}
