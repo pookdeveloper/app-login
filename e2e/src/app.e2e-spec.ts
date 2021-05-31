@@ -8,10 +8,14 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', async () => {
-    await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('app-login app is running!');
+  it('should display errors', async () => {
+    await page.navigateToPage('login');
+    const button = await page.getButtonSubmitForm();
+    button.click();
+    expect(await page.getErrorEmail()).toBeTruthy();
+    expect(await page.getErrorPassword()).toBeTruthy();
   });
+
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

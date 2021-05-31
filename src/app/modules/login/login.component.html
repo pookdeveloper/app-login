@@ -1,6 +1,6 @@
-<div class="bg center">
+<div id="loginComponent" class="bg center">
 
-  <nz-card class="login-form m-10">
+  <nz-card class="login-form m-10" [@rotatedState]='state'>
 
     <div nz-row nzJustify="center">
       <img class="default-user-image"
@@ -13,10 +13,11 @@
     </div>
 
     <form nz-form [formGroup]="form" (ngSubmit)="submitForm()">
-      <nz-form-item>
+      <nz-form-item id="emailInput">
         <nz-form-control [nzErrorTip]="emailErrorTpl">
           <nz-input-group nzPrefixIcon="user">
-            <input type="text" nz-input formControlName="email" placeholder="{{'login.email' | transloco}}"/>
+            <input type="text" nz-input formControlName="email"
+                   placeholder="{{'login.email' | transloco}}"/>
           </nz-input-group>
         </nz-form-control>
         <ng-template #emailErrorTpl let-control>
@@ -28,7 +29,7 @@
           </ng-container>
         </ng-template>
       </nz-form-item>
-      <nz-form-item>
+      <nz-form-item id="passwordInput">
         <nz-form-control nzErrorTip="{{'login.passwordError' | transloco}}">
           <nz-input-group nzPrefixIcon="lock">
             <input type="password" nz-input formControlName="password"
